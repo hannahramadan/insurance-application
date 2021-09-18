@@ -1,0 +1,6 @@
+# Web framework for building server
+Flask~=1.1
+# Flask plugin for using SQLAlchemy in server routes
+Flask-SQLAlchemy~=2.4
+# Allows SQLAlchemy to connect with PostgreSQL databases
+psycopg2-binary==2.8.6
