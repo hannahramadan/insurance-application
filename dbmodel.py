@@ -30,7 +30,8 @@ class Forms(db.Model):
     __tablename__ = "forms"
 
     form_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    broker_id = db.Column(db.Integer, db.ForeignKey('brokers.broker_id'))
+    #making nullable for now since might not add brokers/users
+    broker_id = db.Column(db.Integer, db.ForeignKey('brokers.broker_id'),nullable=True)
     builders_risk_id = db.Column(db.Integer, db.ForeignKey('builders_risk.builders_risk_id'), nullable=True)
     general_liability_id = db.Column(db.Integer, db.ForeignKey('general_liability.general_liability_id'), nullable=True)
 
@@ -47,7 +48,7 @@ class BuildersRisk(db.Model):
     company_name = db.Column(db.String(100))
     email = db.Column(db.String(50))
     company_url = db.Column(db.String(50))
-    zip_code = db.Column(db.Integer))
+    zip_code = db.Column(db.Integer)
     project_address = db.Column(db.String(200))
     building_type = db.Column(db.String(50))
     coverage_needed = db.relationship('BuildersRiskCoverage', backref = "builders_risk_coverage")
@@ -59,10 +60,10 @@ class BuildersRiskCoverage(db.Model):
 
     coverage_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     builders_risk_id = db.Column(db.Integer, db.ForeignKey('builders_risk.builders_risk_id'))
-    materials = db.Column(Boolean, unique=False)
-    foundation = db.Column(Boolean, unique=False)
-    temp_strucutres = db.Column(Boolean, unique=False)
-    weather = db.Column(Boolean, unique=False)
+    materials = db.Column(db.Boolean, unique=False)
+    foundation = db.Column(db.Boolean, unique=False)
+    temp_strucutres = db.Column(db.Boolean, unique=False)
+    weather = db.Column(db.Boolean, unique=False)
 
 class GeneralLiability(db.Model):
     """A general liability form."""
@@ -73,7 +74,7 @@ class GeneralLiability(db.Model):
     company_name = db.Column(db.String(100))
     email = db.Column(db.String(50))
     company_url = db.Column(db.String(50))
-    zip_code = db.Column(db.Integer))
+    zip_code = db.Column(db.Integer)
     project_address = db.Column(db.String(200))
     business_type = db.Column(db.String(50))
     coverage_needed = db.relationship('GeneralLiabilityCoverage', backref = "general_liability_coverage")
@@ -85,10 +86,10 @@ class GeneralLiabilityCoverage(db.Model):
 
     coverage_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     general_liability_id = db.Column(db.Integer, db.ForeignKey('general_liability.general_liability_id'))
-    general_contractor = db.Column(Boolean, unique=False)
-    developer = db.Column(Boolean, unique=False)
-    remodeler = db.Column(Boolean, unique=False)
-    speciality_contractor = db.Column(Boolean, unique=False)
+    general_contractor = db.Column(db.Boolean, unique=False)
+    developer = db.Column(db.Boolean, unique=False)
+    remodeler = db.Column(db.Boolean, unique=False)
+    speciality_contractor = db.Column(db.Boolean, unique=False)
 
 if __name__ == "__main__":
     from server import app
