@@ -45,11 +45,11 @@ class BuildersRisk(db.Model):
     __tablename__ = "builders_risk"
 
     builders_risk_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    company_name = db.Column(db.String(100))
     email = db.Column(db.String(50))
+    company_name = db.Column(db.String(100))
     company_url = db.Column(db.String(50))
     zip_code = db.Column(db.Integer)
-    project_address = db.Column(db.String(200))
+    project_description = db.Column(db.String(800))
     building_type = db.Column(db.String(50))
     coverage_needed = db.relationship('BuildersRiskCoverage', backref = "builders_risk_coverage")
 
@@ -75,7 +75,7 @@ class GeneralLiability(db.Model):
     email = db.Column(db.String(50))
     company_url = db.Column(db.String(50))
     zip_code = db.Column(db.Integer)
-    project_address = db.Column(db.String(200))
+    project_description = db.Column(db.String(800))
     business_type = db.Column(db.String(50))
     coverage_needed = db.relationship('GeneralLiabilityCoverage', backref = "general_liability_coverage")
 

@@ -16,13 +16,13 @@ def homepage():
 
 @app.route('/builders_risk')
 def builders_risk():
-    """Builders Risk Application,"""
+    """Builders Risk Application."""
 
     return render_template('builders_risk.html')
 
 @app.route('/commercial_general_liability')
 def commercial_general_liability():
-    """Commercial General Liability Application,"""
+    """Commercial General Liability Application."""
 
     return render_template('commercial_general_liability.html')
 

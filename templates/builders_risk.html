@@ -5,11 +5,105 @@
     <link rel="icon" href="data:,">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/styles.css" type="text/css">
     <title>
       Builders Risk App
     </title>
   </head>
   <body>
     <h1>Builders Risk</h1>
+    <form>
+        <!-- Email input -->
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email">
+        </div>
+
+        <!-- Company name input -->
+        <div class="form-group">
+            <label for="company_name">Company Name</label>
+            <input type="text" class="form-control" id="company_name">
+        </div>
+
+        <!-- Company website input -->
+        <div class="form-group">
+            <label for="company_website">Company Website</label>
+            <input type="text" class="form-control" id="company_website">
+        </div>
+
+        <!-- Zip code input -->
+        <div class="form-group">
+            <label for="zip_code">Zip Code</label>
+            <input type="text" class="form-control" id="zip_code">
+        </div>
+
+        <!-- Project description input -->
+        <div class="form-group">
+            <label for="project_description">Project Description</label>
+            <textarea class="form-control" id="project_description" rows="4"></textarea>
+        </div>
+
+        <!-- Building type radio input -->
+        <div class="form-group">
+            <label for="building_type">Building Type</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="building_type" id="apartment" value="option1" checked>
+                <label class="form-check-label">
+                  Apartment
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="building_type" id="warehouse" value="option2" >
+                <label class="form-check-label">
+                  Warehouse
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="building_type" id="single_family_home" value="option3" >
+                <label class="form-check-label">
+                  Single Family Home
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="building_type" id="hotel_motel" value="option4" >
+                <label class="form-check-label">
+                  Hotel/Motel
+                </label>
+            </div>
+        </div>
+
+        <!-- Coverage needed checkbox input -->
+        <div class="form-group">
+            <label for="building_type">Coverage Needed</label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="building_materials" id="building_materials">
+                <label class="form-check-label">
+                  Building Materials
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="foundation" id="foundation">
+                <label class="form-check-label">
+                  Foundation
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="temporary_structures" id="temporary_structures">
+                <label class="form-check-label">
+                  Temporary Structures
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="weather_damage" id="weather_damage">
+                <label class="form-check-label">
+                  Weather Damage
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Generate PDF</button>
+        </div>
+    </form>
   </body>
 </html>
