@@ -31,7 +31,7 @@
         <!-- Zip code input -->
         <div class="form-group">
             <label for="zip_code">Zip Code</label>
-            <input type="text" name="zip_code" pattern="\d{5}" class="form-control" id="zip_code" oninvalid="alert('Please enter a valid 5 digit zip code.')" required>
+            <input type="text" name="zip_code" pattern="[0-9]{5}" class="form-control" id="zip_code" oninvalid="this.setCustomValidity('Please enter a valid 5 digit zip code.')" required>
         </div>
 
         <!-- Project description input -->
