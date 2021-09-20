@@ -15,66 +15,60 @@
   </head>
   <body>
     <h1>Builders Risk</h1>
-    <form>
+    <form method="POST">
         <!-- Email input -->
         <div class="form-group">
             <label for="email">Email address</label>
-            <input type="email" class="form-control" id="email">
+            <input type="email" name= "email" class="form-control" id="email" required>
         </div>
 
         <!-- Company name input -->
         <div class="form-group">
             <label for="company_name">Company Name</label>
-            <input type="text" class="form-control" id="company_name">
+            <input type="text" name= "company_name" class="form-control" id="company_name" required>
         </div>
-
-        <!-- Company website input -->
-        <!-- <div class="form-group">
-            <label for="company_website">Company Website</label>
-            <input type="text" class="form-control" id="company_website">
-        </div> -->
 
         <!-- Zip code input -->
         <div class="form-group">
             <label for="zip_code">Zip Code</label>
-            <input type="text" class="form-control" id="zip_code">
+            <input type="text" name="zip_code" pattern="\d{5}" class="form-control" id="zip_code" oninvalid="alert('Please enter a valid 5 digit zip code.')" required>
         </div>
 
         <!-- Project description input -->
         <div class="form-group">
             <label for="project_description">Project Description</label>
-            <textarea class="form-control" id="project_description" rows="4"></textarea>
+            <textarea class="form-control" name= "project_description" id="project_description" rows="4"></textarea>
         </div>
 
         <!-- Building type radio input -->
         <div class="form-group">
             <label for="building_type">Building Type</label>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="building_type" id="apartment" value="option1" checked>
+                <input class="form-check-input" type="radio" name="building_type" value="apartment" checked>
                 <label class="form-check-label">
                   Apartment
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="building_type" id="warehouse" value="option2" >
+                <input class="form-check-input" type="radio" name="building_type" value="warehouse" >
                 <label class="form-check-label">
                   Warehouse
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="building_type" id="single_family_home" value="option3" >
+                <input class="form-check-input" type="radio" name="building_type" value="single family home" >
                 <label class="form-check-label">
                   Single Family Home
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="building_type" id="hotel_motel" value="option4" >
+                <input class="form-check-input" type="radio" name="building_type" value="hotel/motel" >
                 <label class="form-check-label">
                   Hotel/Motel
                 </label>
             </div>
         </div>
-
+        <button id="builders_risk_submit" class="btn btn-primary" formaction="/builders_risk_form">Generate PDF</button>
         <!-- Coverage needed checkbox input -->
         <!-- <div class="form-group">
             <label for="building_type">Coverage Needed</label>

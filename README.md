@@ -12,7 +12,7 @@ Notes:
             - Zip Code (5-digits)
             - Project description (textarea w/charmax)
             - Builing type: Apartment, Warehouse, single family home, hotel/motel,other:specify (radio button)
-            - Coverage needed: Building materials, foundation, temporary structures, weather damage,other:specify (checkbox)
+            <!-- - Coverage needed: Building materials, foundation, temporary structures, weather damage,other:specify (checkbox) -->
         - Commercial General Liability
             - Company Name (input)
             - Email Address (email)
@@ -20,7 +20,7 @@ Notes:
             - Zip Code (5-digits)
             - Project description (textarea w/charmax)
             - Type of business: Residential general contractor, developer, remodeler, speciality contractor, other:specify (radio button)
-            - Coverage needed: faulty workmanship, job-related injury, other:specify (checkbox)
+            <!-- - Coverage needed: faulty workmanship, job-related injury, other:specify (checkbox) -->
 
 - PDF Generator (Library: PyFPDF?)
 
