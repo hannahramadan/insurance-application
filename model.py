@@ -71,8 +71,8 @@ class GeneralLiability(db.Model):
     __tablename__ = "general_liability"
 
     general_liability_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    company_name = db.Column(db.String(100))
     email = db.Column(db.String(50))
+    company_name = db.Column(db.String(100))
     # company_url = db.Column(db.String(50))
     zip_code = db.Column(db.Integer)
     project_description = db.Column(db.String(800))
