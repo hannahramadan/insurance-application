@@ -15,5 +15,60 @@
   </head>
   <body>
     <h1>Commercial General Liability</h1>
+    <form method="POST">
+        <!-- Email input -->
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" name= "email" class="form-control" id="email" required>
+        </div>
+
+        <!-- Company name input -->
+        <div class="form-group">
+            <label for="company_name">Company Name</label>
+            <input type="text" name= "company_name" class="form-control" id="company_name" required>
+        </div>
+
+        <!-- Zip code input -->
+        <div class="form-group">
+            <label for="zip_code">Zip Code</label>
+            <input type="text" name="zip_code" pattern="\d{5}" class="form-control" id="zip_code" oninvalid="this.setCustomValidity('Please enter a valid 5 digit zip code.')" oninput="this.setCustomValidity('')" required>
+        </div>
+
+        <!-- Project description input -->
+        <div class="form-group">
+            <label for="project_description">Project Description</label>
+            <textarea class="form-control" name= "project_description" id="project_description" rows="4"></textarea>
+        </div>
+
+        <!-- Building type radio input -->
+        <div class="form-group">
+            <label for="business_type">Business Type</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="business_type" value="Residential" checked>
+                <label class="form-check-label">
+                  Residential
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="business_type" value="General contractor" >
+                <label class="form-check-label">
+                  General Contractor
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="business_type" value="Developer" >
+                <label class="form-check-label">
+                  Developer
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="business_type" value="Speciality contractor" >
+                <label class="form-check-label">
+                  Speciality Contractor
+                </label>
+            </div>
+        </div>
+        <button id="builders_risk_submit" class="btn btn-primary" formaction="/general_liability_form">Generate PDF</button>
+    </form>
   </body>
 </html>
