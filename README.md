@@ -1,31 +1,18 @@
-Notes:
+# Insurance Application
+Webapp for submitting construction insurance requests and receiving a pdf of that request in return. 
 
-- Database (Postgres):
-    - 3 tables: 2 forms + users
+# Features
+- Two insurance form options are avaliable.
+- Upon form submission, form is stored in postgres database. 
+- Simultaneously, a PDF version of the submitted form is generated and shown to the user.
+- Users must have a auth cookie with value "shepherd" to submit form. Adding document.cookie="auth=shepherd" to dev console allows form submission.
 
-- UI (Bootstrap, CSS, HTML). source: https://constructioncoverage.com/construction-insurance 
-    - Forms:
-        - Builders Risk
-            - Company Name (input)
-            - Email Address (email)
-            - Company Website (url)
-            - Zip Code (5-digits)
-            - Project description (textarea w/charmax)
-            - Builing type: Apartment, Warehouse, single family home, hotel/motel,other:specify (radio button)
-            <!-- - Coverage needed: Building materials, foundation, temporary structures, weather damage,other:specify (checkbox) -->
-        - Commercial General Liability
-            - Company Name (input)
-            - Email Address (email)
-            - Company Website (url)
-            - Zip Code (5-digits)
-            - Project description (textarea w/charmax)
-            - Type of business: Residential general contractor, developer, remodeler, speciality contractor, other:specify (radio button)
-            <!-- - Coverage needed: faulty workmanship, job-related injury, other:specify (checkbox) -->
+# Tech
+- Backend: Python3, Flask, PostgreSQL, SQLAlchemy, Jinja2
+- Frontend: HTML5, CSS, Bootstrap
+- Libraries: pdfkit
 
-- PDF Generator (Library: PyFPDF?)
-
-- Web framework (Flask):
-    - Landing page: 2 application options
-    - Forms, required: "shepherd" auth cookie
-        - Builders Risk
-        - General Liability
+# Future Updates
+- Enhance styling with Bootstrap
+- Mobile-friendly version
+- Add additional insurance form field options
