@@ -1,6 +1,17 @@
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
 body {
-    padding-top: 100px;
-    padding-bottom: 100px;
-    padding-left: 100px;
-    padding-right: 100px;
-    }
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.form{
+    width: 700px;
+}

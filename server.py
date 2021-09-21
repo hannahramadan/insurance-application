@@ -84,10 +84,7 @@ def general_liability_form():
         display.stop()
 
     response = make_response(pdf)
-
-    # tells brower its about to get a pdf file
     response.headers['Content-Type'] = 'application/pdf'
-    # loads pdf in browers vs download
     response.headers['Content-Disposition'] = 'inline; filename=output.pdf'
 
     return response
