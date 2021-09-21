@@ -10,6 +10,7 @@ from jinja2 import StrictUndefined
 from pyvirtualdisplay import Display
 
 app = Flask(__name__)
+app.secret_key = "dev"
 app.jinja_env.undefined = StrictUndefined
 
 @app.route('/')
@@ -32,6 +33,12 @@ def commercial_general_liability():
 
 @app.route('/builders_risk_form', methods=['POST'])
 def builders_risk_form():
+
+    cookie = request.cookies.get('auth') 
+    if cookie != "shepherd":
+        flash("Incorrect Login")
+        return redirect("/builders_risk")
+
     email = request.form.get('email')
     company_name = request.form.get('company_name')
     zip_code = request.form.get('zip_code')
@@ -63,6 +70,12 @@ def builders_risk_form():
 
 @app.route('/general_liability_form', methods=['POST'])
 def general_liability_form():
+
+    cookie = request.cookies.get('auth') 
+    if cookie != "shepherd":
+        flash("Incorrect Login")
+        return redirect("/commercial_general_liability")
+
     email = request.form.get('email')
     company_name = request.form.get('company_name')
     zip_code = request.form.get('zip_code')

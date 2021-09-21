@@ -15,6 +15,11 @@
   </head>
   <body>
     <h1>Commercial General Liability</h1>
+    <p>
+      {% for message in get_flashed_messages() %}
+      <b class="flash_msg">{{ message }}</b>
+      {% endfor %}
+    </p>
     <form method="POST" class="form">
         <!-- Email input -->
         <div class="form-group">
