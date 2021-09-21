@@ -69,7 +69,7 @@ def general_liability_form():
     project_description = request.form.get('project_description')
     business_type = request.form.get('business_type')
 
-    crud.create_builders_risk(email, company_name, zip_code, 
+    crud.create_general_liability(email, company_name, zip_code, 
                         project_description, business_type)
 
     rendered = render_template('general_liability_pdf.html',email=email, company_name=company_name, zip_code=zip_code, 
